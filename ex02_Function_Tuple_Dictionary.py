@@ -40,19 +40,19 @@ print(math_backup_score)
 
 # reverse() 리스트 자체가 갱신된다.
 
-# In[6]:
+# In[4]:
 
 
 a = [1, 10, 5, 7 , 6]
 
 
-# In[7]:
+# In[5]:
 
 
 a.reverse()
 
 
-# In[8]:
+# In[6]:
 
 
 print(a)
@@ -111,7 +111,7 @@ print(a.count(4))
 print(a.count(5))
 
 
-# In[15]:
+# In[7]:
 
 
 appetizer = ['egg', 'salad', 'bread', 'soup', 'canape']
@@ -120,11 +120,13 @@ dessert = ['apple', 'ice cream', 'pudding', 'cookies', 'cake']
 
 order = [appetizer, main_dish, dessert]
 jane = [order[0][:-2], main_dish[1::3], dessert[1:3]]
+print(jane)
+
 del jane[2]
 jane.extend([order[2][0:1]])
 
 
-# In[16]:
+# In[8]:
 
 
 print(jane)
@@ -313,7 +315,7 @@ print(result)
 # 
 # # 함수
 # def 함수이름 (인자1, 인자2, ...옵션):  
-#         실행문1 
+#         실행문1  
 #         실행문2    
 #         return 반환값(옵션)
 
@@ -335,7 +337,7 @@ print(calculate_rectangle_area(rec_width,rec_height))
 #     대표적으로 레퍼런스 넘기는 예제 --> 함수 내부에서는 동일한 객체 사용  
 #                  stack | heap  
 #     shopping_list[100] | 100['bean', 'salt','beef']  
-#             goods[100] | [2001,2]
+#             goods[100] | 200[1,2]
 
 # In[4]:
 
@@ -465,13 +467,17 @@ def print_name(my_name = 'Tom', your_name):
 
 # 
 
-# sentence = 'I love you'
-# reverse_sentence = ''
-# for char in sentence:
-#     reverse_sentence = char + reverse_sentence
-# print(reverse_sentence)
+# In[12]:
 
-# In[33]:
+
+sentence = 'I love you'
+reverse_sentence = ''
+for char in sentence:
+    reverse_sentence = char + reverse_sentence
+print(reverse_sentence)
+
+
+# In[15]:
 
 
 s = "BLACK LIVES MATTER"
@@ -480,10 +486,10 @@ print(s.lower()) # 소문자
 print(s.title()) # 제목 
 print(s.capitalize()) # 첫글자만 대문자
 print(s.count("T")) # 갯수 출력
-print(s.startswith("B")) #
+print(s.startswith("B")) # 처음 시작하는 문자 부울
 
 k = "123"
-print(k.isdigit())
+print(k.isdigit()) # 숫자인지 판별
 
 
 # In[32]:
@@ -650,29 +656,27 @@ student_info[20190001] = 'Kate'
 print(student_info)
 
 
-# 이해못함
-
 # In[73]:
 
 
 country_code = {'USA':1, 'Korea':82, 'China':86, 'Malaysia':60}
-print(country_code)
+print(country_code)     # 키:벨류 다 출력
 
-print(country_code.keys())
+print(country_code.keys()) # 키 값만 출력
 
 country_code['German'] = 49
-print(country_code)
+print(country_code) # 키:밸류 추가
 
-print(country_code.values())
-print(country_code.items())
+print(country_code.values()) # 벨류만 출력
+print(country_code.items()) # 키:벨류를 각각의 리스트로 만들어줌
 print()
 
-for k, v in country_code.items():
+for k, v in country_code.items():  # 튜플로 바로 언팩킹
     print('Key:', k)
     print('Value:', v)
 
-print('Korea' in country_code.keys())
-print(85 in country_code.values())
+print('Korea' in country_code.keys()) # 값이 존재하면 부울로 표현
+print(85 in country_code.values())  # 값이 존재하면 부울로 표현
 
 
 # In[78]:
@@ -808,6 +812,9 @@ print(od)
 
 
 #  k
+
+#    
+#  Defaultdict 값이 존재하지 않아도 만들어서 실행 try: except 알아서 해줌
 
 # In[114]:
 
